@@ -13,6 +13,6 @@ class Solution:
         a.append(num2)
         return sum(a)
 
-
-Solution = Solution()
-print(Solution.Add(1, 2))
+if __name__ == '__main__':
+    Solution = Solution()
+    print(Solution.Add(1, 2))
