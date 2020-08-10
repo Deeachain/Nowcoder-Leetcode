@@ -15,5 +15,5 @@ class Solution:
         # write code here
         if not pRoot:
             return 0
-        deepth = max(self.TreeDepth(pRoot.left), self.TreeDepth(pRoot.right))+1
+        deepth = max(self.TreeDepth(pRoot.left), self.TreeDepth(pRoot.right)) + 1
         return deepth
