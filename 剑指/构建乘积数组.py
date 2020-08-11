@@ -10,9 +10,9 @@ class Solution:
         # write code here
         B = [1] * len(A)
         for index1, array1 in enumerate(A):
-            for index2, array2  in enumerate(A):
+            for index2, array2 in enumerate(A):
                 if not index1 == index2:
-                    B[index1] *=array2
+                    B[index1] *= array2
         return B
 
 
