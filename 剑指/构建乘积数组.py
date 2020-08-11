@@ -8,14 +8,11 @@
 class Solution:
     def multiply(self, A):
         # write code here
-        length = len(A)
-        B = [0] * length
-        for index1, array in enumerate(A):
-            sum = 1
-            for index2, array in enumerate(A):
+        B = [1] * len(A)
+        for index1, array1 in enumerate(A):
+            for index2, array2  in enumerate(A):
                 if not index1 == index2:
-                    sum *= array
-            B[index1] = sum
+                    B[index1] *=array2
         return B
 
 
