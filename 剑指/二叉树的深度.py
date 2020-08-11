@@ -4,16 +4,20 @@
 '''
 
 
-# -*- coding:utf-8 -*-
-# class TreeNode:
-#     def __init__(self, x):
-#         self.val = x
-#         self.left = None
-#         self.right = None
 class Solution:
     def TreeDepth(self, pRoot):
         # write code here
         if not pRoot:
             return 0
-        deepth = max(self.TreeDepth(pRoot.left), self.TreeDepth(pRoot.right)) + 1
-        return deepth
+        a = [pRoot]
+        d = 0
+        while a:
+            b = []
+            for node in a:
+                if node.left:
+                    b.append(node.left)
+                if node.right:
+                    b.append(node.right)
+            d += 1
+            a = b
+        return d
