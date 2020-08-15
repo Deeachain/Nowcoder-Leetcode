@@ -21,3 +21,12 @@ class Solution:
             d += 1
             a = b
         return d
+
+
+class Solution:
+    def TreeDepth(self, pRoot):
+        # write code here
+        if not pRoot:
+            return 0
+        count = max(self.TreeDepth(pRoot.left),self.TreeDepth(pRoot.right))+1
+        return count
