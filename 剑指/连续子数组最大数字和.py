@@ -5,6 +5,20 @@ HZ偶尔会拿些专业问题来忽悠那些非计算机专业的同学。今天
 连续子向量的最大和为8(从第0个开始,到第3个为止)。给一个数组，返回它的最大连续子序列的和，你会不会被他忽悠住？(子向量的长度至少是1)
 """
 
+# 动态规划，推荐*****
+class Solution:
+    def FindGreatestSumOfSubArray(self, array):
+        # write code here
+        maxNum = array[0]
+        tempNum = 0
+        for i in array:
+            if tempNum+i < i:
+                tempNum = i
+            else:
+                tempNum+=i
+            maxNum = max(maxNum, tempNum)
+        return maxNum
+
 
 
 class Solution:
