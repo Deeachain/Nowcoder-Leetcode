@@ -5,6 +5,9 @@
 """
 
 
+"""
+通过树的深度判断是否是平衡二叉树
+"""
 # class TreeNode:
 #     def __init__(self, x):
 #         self.val = x
