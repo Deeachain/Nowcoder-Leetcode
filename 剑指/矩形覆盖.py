@@ -6,7 +6,7 @@
 
 
 """
-
+思路：总结规律 f[n] = f[n-1] + f[n-2]，初始条件f[1] = 1, f[2] =2
 """
 class Solution:
     def rectCover(self, number):
