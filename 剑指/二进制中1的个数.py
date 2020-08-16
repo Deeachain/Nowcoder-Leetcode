@@ -2,16 +2,19 @@
 """
 输入一个整数，输出该数32位二进制表示中1的个数。其中负数用补码表示。
 """
-
 class Solution:
-    def NumberOf1Between1AndN_Solution(self, n):
+    def NumberOf1(self, n):
         # write code here
-        cnt = 0
-        for i in range(1, n+1):
-            if '1' in str(i):
-                cnt += 1
-        return cnt
+        count = 0
+        flag = 1
+        for i in range(32):
+            if n & flag !=0:
+                count+=1
+            flag <<= 1
+        return count
+
 
 if __name__ == '__main__':
     Solution = Solution()
-    print(Solution.NumberOf1Between1AndN_Solution(2593))
+    print(Solution.NumberOf1(5))
+
