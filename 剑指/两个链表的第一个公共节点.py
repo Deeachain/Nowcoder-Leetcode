@@ -10,49 +10,35 @@
 #         self.next = None
 class Solution:
     def FindFirstCommonNode(self, pHead1, pHead2):
-
-        # 假设输入的两个链表，是同一个链表
+        # write code here
         if pHead1 == pHead2:
             return pHead1
-
-        pTmp1 = pHead1
-        pTmp2 = pHead2
-
-        # 我们通过循环，让其中一个节点走到最后
-        while pTmp1 and pTmp2:
-            pTmp1 = pTmp1.next
-            pTmp2 = pTmp2.next
-
-        # 判断哪个链表先走到最后
-        # 假设pTmp1，还没有走完，说明pTmp2是更短的
-        if pTmp1:
-            k = 0
+        p1 = pHead1
+        p2 = pHead2
+        while p1 and p2:
+            p1 = p1.next
+            p2 = p2.next
+        if p1:
             # 寻找链表长度之间的差值
-            while pTmp1:
-                pTmp1 = pTmp1.next
-                k += 1
-            # 我们让pTmp1先跳N步
-            pTmp2 = pHead2
-            pTmp1 = pHead1
-            for i in range(k):
-                pTmp1 = pTmp1.next
-
-            # 当找到节点相等的时候，也就是说明该节点是公共节点
-            while pTmp1 != pTmp2:
-                pTmp1 = pTmp1.next
-                pTmp2 = pTmp2.next
-            return pTmp1
-
-        if pTmp2:
             k = 0
-            while pTmp2:
-                pTmp2 = pTmp2.next
+            while p1:
+                p1 = p1.next
                 k += 1
-            pTmp2 = pHead2
-            pTmp1 = pHead1
+            # 让p1先跳K步
             for i in range(k):
-                pTmp2 = pTmp2.next
-            while pTmp1 != pTmp2:
-                pTmp1 = pTmp1.next
-                pTmp2 = pTmp2.next
-            return pTmp1
+                pHead1 = pHead1.next
+            while pHead1 and pHead2:
+                if pHead1 == pHead2:
+                    return pHead1
+                pHead1 = pHead1.next
+                pHead2 = pHead2.next
+        if p2:
+            k = 0
+            while p2:
+                p2 = p2.next
+                k += 1
+            for i in range(k):
+                pHead2 = pHead2.next
+            while pHead1 and pHead2:
+                if pHead1 == pHead2:
+                    return pHead1

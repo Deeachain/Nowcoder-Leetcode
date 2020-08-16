@@ -5,22 +5,25 @@
 例如数组{3,4,5,1,2}为{1,2,3,4,5}的一个旋转，该数组的最小值为1。
 NOTE：给出的所有元素都大于0，若数组大小为0，请返回0。
 """
+
+
 class Solution:
-    # 二分查找法
-    # 有序的数组中使用
     def minNumberInRotateArray(self, rotateArray):
-        if not rotateArray:
-            return None
-        left = 0
-        right = len(rotateArray) - 1
-        while left <= right:
-            middle = (left + right) >> 1
-            # middle 比两边的都小，说明是最小值
-            if rotateArray[middle] < rotateArray[middle - 1]:
-                return rotateArray[middle]
-            # 说明右边递增，则最小在左边
-            elif rotateArray[middle] < rotateArray[right]:
-                right = middle - 1
+        # write code here
+        if rotateArray ==None:
+            return 0
+        left, right = 0, len(rotateArray)-1
+        while left < right:
+            mid = (left + right) >> 1
+            if rotateArray[mid] < rotateArray[right]:
+                right = mid
+            elif rotateArray[mid] > rotateArray[right]:
+                left = mid+1
             else:
-                left = middle + 1
-        return 0
+                right -= 1
+        return rotateArray[left]
+
+
+if __name__ == '__main__':
+    Solution = Solution()
+    print(Solution.minNumberInRotateArray([6501, 6828, 6963, 7036, 7422, 5725, 6300, 6335]))

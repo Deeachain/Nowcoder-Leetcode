@@ -5,6 +5,9 @@
 """
 
 
+"""
+思路：循环1到n中的每个数字，对数字每一位对10求余数，判断余数为1，则计数加1
+"""
 class Solution:
     def NumberOf1Between1AndN_Solution(self, n):
         # write code here
