@@ -18,6 +18,7 @@ class Solution:
         return count
 
 
+# 需要进一步理解
 class Solution:
     def NumberOf1Between1AndN_Solution(self, n):
         # write code here
