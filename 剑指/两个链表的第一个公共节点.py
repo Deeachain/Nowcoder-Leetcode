@@ -43,18 +43,15 @@ class Solution:
                 pTmp2 = pTmp2.next
             return pTmp1
 
-        # 假设pTmp2，还没有走完，说明pTmp1是更短的
         if pTmp2:
             k = 0
             while pTmp2:
                 pTmp2 = pTmp2.next
                 k += 1
-            # 我们让pTmp2先跳N步
             pTmp2 = pHead2
             pTmp1 = pHead1
             for i in range(k):
                 pTmp2 = pTmp2.next
-
             while pTmp1 != pTmp2:
                 pTmp1 = pTmp1.next
                 pTmp2 = pTmp2.next
