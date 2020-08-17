@@ -22,8 +22,6 @@ class Solution:
             return False
         else:
             return True
-        return self.IsBalanced_Solution(pRoot.left) and self.IsBalanced_Solution(pRoot.right)
-
     def TreeDepth(self, pRoot):
         if not pRoot:
             return 0
