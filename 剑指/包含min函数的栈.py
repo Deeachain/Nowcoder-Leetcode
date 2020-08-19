@@ -5,35 +5,35 @@
 
 
 class Solution:
-    # 初始化
     def __init__(self):
         self.stack = []
-        # 存储最小元素
         self.minValue = []
-    # 压栈
-    def push(self, node):
-        self.stack.append(node)
 
-        # 维护当前最小的数组
-        if self.minValue:
-            if self.minValue[-1] > node:
-                self.minValue.append(node)
-            else:
-                self.minValue.append(self.minValue[-1])
-        else:
+    def push(self, node):
+        # write code here
+        self.stack.append(node)
+        if not self.minValue:
             self.minValue.append(node)
-    # 出栈
+        elif self.minValue[-1] > node:
+            self.minValue.append(node)
+        elif self.minValue[-1] < node:
+            self.minValue.append(self.minValue[-1])
+
     def pop(self):
+        # write code here
         if self.stack == []:
             return None
         self.minValue.pop()
         return self.stack.pop()
-    # 获取栈顶
+
     def top(self):
+        # write code here
         if self.stack == []:
             return None
         return self.stack[-1]
+
     def min(self):
+        # write code here
         if self.minValue == []:
             return None
         return self.minValue[-1]
