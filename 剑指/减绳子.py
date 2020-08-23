@@ -22,6 +22,8 @@
     *
     * 所以不难发现3和2的个数规律
 """
+
+
 class Solution:
     def cutRope(self, number):
         # write code here
